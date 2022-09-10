@@ -8,8 +8,6 @@ public class Main {
     static LinkedList list = new LinkedList();
     public static void main(String[] args) {
         Choices();
-//        LinkedList list = new LinkedList();
-
      /*   list.insertNode("test1");
         list.insertNode("test2");
         list.insertNode("test3");
@@ -81,15 +79,15 @@ public class Main {
                     isExit = true;
                     System.out.println("exiting..");
                     Exit();
-
                 }
                 case 1: {
-                    String iNode = read.next();
+                    System.out.println("");
+                    int iNode = read.nextInt();
                     list.insertFirst(iNode);
                     break;
                 }
                 case 2: {
-                    String node = read.nextLine();
+                    int node = read.nextInt();
                     list.insertNode(node);
                     break;
                 }
@@ -112,14 +110,14 @@ public class Main {
                 }
                 case 7: {
                     list.printNodes();
-                    return;
+                    break;
                 }
             }
         }
 
     }
     static void Exit(){
-        System.exit(2123123);
+        System.exit(69);
     }
     static void Print(){
         System.out.println(" 0 - Exit\n 1 - Add to head\n 2 - Add to tail \n " +

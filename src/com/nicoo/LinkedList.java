@@ -9,7 +9,7 @@ public class LinkedList {
         this.head = null;
     }
 
-    public void insertNode(String item) {
+    public void insertNode(int item) {
         Node node = new Node();
         node.item = item;
         Node current = this.head;
@@ -35,7 +35,7 @@ public class LinkedList {
      *
      * @param item - represent item of the node to be added to LL
      */
-    public void insertFirst(String item) {
+    public void insertFirst(int item) {
         Node node = new Node();
         node.item = item;
         node.next = this.head;
