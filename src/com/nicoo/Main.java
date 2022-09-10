@@ -1,126 +1,83 @@
-package com.nicoo;
+package com.nicoo;/*
+Activity 3: Implementation of Singly Linked Lists
+ESTRELLA, PITT GREGORI
+LLOSA, EDUARDO DOMINICO
+CC 13.1 B - DATA STRUCTURES AND ALGORITHMS
+*/
 
 import java.util.Scanner;
 
-public class Main {
-    static int dNode =0;
-    static Scanner read = new Scanner(System.in);
-    static LinkedList list = new LinkedList();
-    public static void main(String[] args) {
-        Choices();
-     /*   list.insertNode("test1");
-        list.insertNode("test2");
-        list.insertNode("test3");
-        list.insertNode("test4");
-        list.insertNode("test5");
-        list.insertNode("test6");
-        list.insertNode("test7");
-        list.printNodes();
-
-        System.out.println();
-
-        System.out.println("Finding item test2 in the Linked list");
-        list.findNode("test2");
-        System.out.println("Finding item nonExist in the Lineked list");
-        list.findNode("nonExist");
-
-        System.out.println();
-
-        System.out.println("Finding item at location 4");
-        list.findNodeAt(4);
-
-        System.out.println();
-        System.out.println("Finding item at last location ");
-        list.findLastNode();
-
-        System.out.println();
-
-        System.out.println("Current Size of the list is: "+list.getListSize());
-        System.out.println("Adding test1st at start of the Node");
-        list.insertFirst("test1st");
-        list.printNodes();
-
-        System.out.println();
-
-        System.out.println("Current Size of the list is: "+list.getListSize());
-        System.out.println("Adding testNth at 2nd Location");
-        list.insertNth("testNth", 2);
-        list.printNodes();
-
-        System.out.println();
-
-        System.out.println("Current Size of the list is: "+list.getListSize());
-        System.out.println("Deleting first node");
-        list.deleteFirstNode();
-        list.printNodes();
-
-        System.out.println();
-
-        System.out.println("Current Size of the list is: "+list.getListSize());
-        System.out.println("Deleting last node");
-        list.deleteLastNode();
-        list.printNodes();
-
-        System.out.println();
-
-        System.out.println("Current Size of the list is: "+list.getListSize());
-        System.out.println("Deleting node from 4th location");
-        list.deleteNthNode(4);
-        list.printNodes();*/
-    }
-    static void Choices(){
-        boolean isExit = false;
-
-        while (!isExit) {
-            Print();
-            int choice = read.nextInt();
-            switch (choice) {
-                case 0: {
-                    isExit = true;
-                    System.out.println("exiting..");
-                    Exit();
-                }
-                case 1: {
-                    System.out.println("");
-                    int iNode = read.nextInt();
-                    list.insertFirst(iNode);
-                    break;
-                }
-                case 2: {
-                    int node = read.nextInt();
-                    list.insertNode(node);
-                    break;
-                }
-                case 3: {
-                    list.deleteFirstNode();
-                    break;
-                }
-                case 4: {
-                    list.deleteLastNode();
-                    break;
-                }
-                case 5: {
-                    String node = read.nextLine();
-                    list.findNode(node);
-                    break;
-                }
-                case 6: {
-                    list.deleteNthNode(dNode = read.nextInt());
-                    break;
-                }
-                case 7: {
-                    list.printNodes();
-                    break;
+    public class Main {
+        static int dNode =0;
+        static Scanner read = new Scanner(System.in);
+        static LinkedList list = new LinkedList();
+        public static void main(String[] args) {
+            Prompt();
+        }
+        static void Prompt(){
+            boolean isExit = false;
+            while (!isExit) {
+                Print();
+                int choice = read.nextInt();
+                switch (choice) {
+                    case 0: {
+                        isExit = true;
+                        System.out.println("Now exiting!!");
+                        Exit();
+                    }
+                    case 1: {
+                        System.out.print("Add value to the head: ");
+                        int iNode = read.nextInt();
+                        list.insertFirst(iNode);
+                        System.out.println(iNode + " node added to the Head successfully");
+                        break;
+                    }
+                    case 2: {
+                        System.out.print("Add value to the tail: ");
+                        int node = read.nextInt();
+                        list.insertNode(node);
+                        System.out.println(node + " node added to the tail successfully");
+                        break;
+                    }
+                    case 3: {
+                        list.deleteFirstNode();
+                        System.out.println("Head is deleted");
+                        System.out.println("Current list");
+                        list.printNodes();
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("Tail is deleted");
+                        list.deleteLastNode();
+                        System.out.println("Current list");
+                        list.printNodes();
+                        break;
+                    }
+                    case 5: {
+                        System.out.print("Find value in the list: ");
+                        int node = read.nextInt();
+                        list.findNode(node);
+                        break;
+                    }
+                    case 6: {
+                        System.out.print("Delete a specific value in the list: ");
+                        list.deleteNthNode(dNode = read.nextInt());
+                        break;
+                    }
+                    case 7: {
+                        list.printNodes();
+                        break;
+                    }
                 }
             }
-        }
 
+        }
+        static void Exit(){
+            System.exit(69);
+        }
+        static void Print(){
+            System.out.println(" 0 - Exit\n 1 - Add to head\n 2 - Add to tail \n " +
+                    "3 - Delete from head \n 4 - Delete from tail \n 5 - Is in list \n 6 - Delete a value \n 7 - Print all");
+        }
     }
-    static void Exit(){
-        System.exit(69);
-    }
-    static void Print(){
-        System.out.println(" 0 - Exit\n 1 - Add to head\n 2 - Add to tail \n " +
-                "3 - Delete from head \n 4 - Delete from tail \n 5 - Is in list \n 6 - Delete a value \n 7 - Print all");
-    }
-}
+
